@@ -87,14 +87,10 @@ public class JobData {
     public static ArrayList<HashMap<String, String>> findByValue(String value) {
         loadData();
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
-
-
-        for (HashMap<String, String> row : allJobs) {
-            if (row.containsValue(value)){
-                jobs.add(row);
-              } else{
-                System.out.println("No job found");
-            }
+        for (HashMap<String, String> job : allJobs) {
+            if (job.containsValue(value)){
+                jobs.add(job);
+              }
             }
         return jobs;
 
