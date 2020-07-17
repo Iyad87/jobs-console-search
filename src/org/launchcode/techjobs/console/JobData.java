@@ -69,15 +69,14 @@ public class JobData {
         // load data, if not already loaded
         loadData();
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
-
-        for (HashMap<String, String> row : allJobs) {
-            String aValue = row.get(column);
-            if (aValue.equalsIgnoreCase(value)) {
-                jobs.add(row);
-            } else {
-                System.out.println("No Results Found");
+            for (HashMap<String, String> row : allJobs) {
+                String aValue = row.get(column);
+                if (aValue.equalsIgnoreCase(value)) {
+                    jobs.add(row);
+                } else
+                    System.out.println("No Result");
             }
-        }
+
         return jobs;
     }
 
@@ -86,15 +85,14 @@ public class JobData {
         loadData();
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
 
-                for (HashMap<String, String> row : allJobs) {
+            for (HashMap<String, String> row : allJobs) {
                     for (String val : row.values()) {
                         if (val.equalsIgnoreCase(value)) {
                             jobs.add(row);
-                        } else {
-                            System.out.println("No Results Found");
-                        }
+                        } else
+                            System.out.println("No Result");
                     }
-                }
+        }
         return jobs;
     }
 
